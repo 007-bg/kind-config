@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/007-bg/kubepythontestapp.git
+    repoURL: https://github.com/007-bg/kind-config.git
     targetRevision: main
     path: k8s          # folder where manifests are stored
 
