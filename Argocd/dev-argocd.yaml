@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: argocd   # ArgoCD runs here
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/007-bg/kubepythontestapp.git
+    targetRevision: main
+    path: k8s          # folder where manifests are stored
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
